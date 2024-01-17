@@ -1,0 +1,142 @@
+<?xml version="1.0" ?>
+
+<world name="demo_world" gravity="0.0 0.0 -9.81">
+
+	<robot name="toro">
+		<model dir="./resources" path="toro.urdf" name="toro" />
+		<origin xyz="-11.0, -2.15, 0.0" rpy="0 0 0" />
+	</robot>
+
+<!--	<static_object name="Ground_With_Texture">
+		<origin xyz="0.0 0.0 -1.15" rpy="0 0 0" />
+	    <visual>
+	        <origin xyz="0.0 0.0 -0.0001" rpy="0 0 0" />
+	        <geometry>
+	            <box size="2 2 0.0002" />
+	        </geometry>
+	        <material name="material">
+		        <color rgba="0.5 0.5 0.5 1.0" />
+	        </material>
+	    </visual>
+	</static_object>
+	-->
+	<static_object name="court">
+		<origin xyz= "0.0 0.0 -1.15" rpy= "0 0 0" />
+	    	<visual>
+			<origin xyz="0.0 0.0 -0.0001" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="../../model/test_objects/meshes/visual/court.obj" />
+			</geometry>
+		</visual>
+		<collision>
+	        	<origin xyz="0.0 0.0 -0.0001" rpy="0 0 0" />
+	        	<geometry>
+	            		<box size="23.0 11.5 0.00001" rpy= "0 0 0" />
+	        	</geometry>
+	    	</collision>
+	</static_object>
+
+<!--	<static_object name="red_square">
+		<origin xyz= "6.0 -1.5 -1.15" rpy= "0 0 0" />
+	    <visual>
+			<origin xyz="0.0 0.0 -0.0001" rpy="0 0 0" />
+			<geometry>
+				<box size="0.6 0.6 0.0002" />
+			</geometry>
+			<material name="red">
+				<color rgba="1.0 0.0 0.0 0.0" />
+			</material>
+		</visual>
+	</static_object>
+-->
+	<static_object name="net">
+		<origin xyz = "0.0 0.0 -1.15" rpy="0 0 0" />
+		<visual>
+			<origin xyz="0.0 0.0 -0.0001" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="../../model/test_objects/meshes/visual/net.obj" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0.0 0.0 -0.0001" rpy="0 0 0" />
+			<geometry>
+				<box size="0.01 12.0 2.0" />
+			</geometry>	
+		</collision>
+	</static_object>
+
+	<dynamic_object name="ball1">
+		<origin xyz = "-10.0 -1.75 1.0" rpy = "0 0 0" />
+		<inertial>
+        		<origin xyz="0 0 0" rpy="0 0 0" />
+        		<mass value="0.056" />
+        		<inertia ixx="0.000032" iyy="0.000032" izz="0.000032" ixy="0" ixz="0" iyz="0" />
+      		</inertial>
+		<visual>
+			<origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="../../model/test_objects/meshes/visual/tennisball.obj" />
+			</geometry>
+		</visual>
+		<collision>
+	        	<origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+	        	<geometry>
+	            		<sphere radius="0.0335" />
+	        	</geometry>
+	       </collision>	
+	</dynamic_object> 
+	
+	<light name="light1" type="directional">
+                <position xyz="-6.5 0.0 10.0" />
+                <lookat xyz="-6.5 0.0 0.0" />
+        </light>
+
+	<light name="light2" type="directional">
+                <position xyz="6.5 0.0 10.0" />
+                <lookat xyz="6.5 0.0 0.0" />
+        </light>
+	
+	<!--
+	<light name="light1" type="directional">
+		<position xyz="11.0 6.5 6.0" />
+		<lookat xyz="11.0 4.5 0.0" />
+	</light>
+
+	<light name="light2" type="directional">
+		<position xyz="-11.0 6.5 6.0" />
+		<lookat xyz="-11.0 4.5 0.0" />
+	</light>
+	
+	<light name="light3" type="directional">
+		<position xyz= "0.0 6.5 6.0" />
+		<lookat xyz="0.0 4.5 0.0" />
+	</light>
+
+	<light name="light4" type="directional">
+                <position xyz= "11.0 -6.5 6.0" />
+                <lookat xyz="11.0 -4.5 0.0" />
+	</light>
+
+	<light name="light5" type="directional">
+                <position xyz="-11.0 -6.5 6.0" />
+                <lookat xyz="-11.0 -4.5 0.0" />
+	</light>
+
+	<light name="light6" type="directional">
+                <position xyz= "0.0 -6.5 6.0" />
+                <lookat xyz="0.0 -4.5 0.0" />
+        </light>
+	-->
+	<camera name="camera_fixed">
+		<position xyz="-14.0 -3.25 1.0" />
+		<vertical xyz="0.0 0.0 2.0" />
+		<lookat xyz="-6.5 -1.75 0.0" />
+	</camera>
+
+	<camera name="camera_move">
+		<position xyz="-2.0 0.0 5.0" />
+		<vertical xyz="0.0 0.0 2.0" />
+		<lookat xyz="1.0 0.0 0.0" />
+	</camera>
+
+</world>

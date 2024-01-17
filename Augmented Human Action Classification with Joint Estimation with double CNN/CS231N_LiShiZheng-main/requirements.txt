@@ -1,0 +1,9 @@
+opencv-python
+pandas
+matplotlib
+configargparse
+torchaudio
+torchvision
+tomlkit
+tqdm
+pytorch

@@ -1,0 +1,13 @@
+function[source_map] = update_map(x_r, posterior, source_map)
+    normalization = sum(posterior);
+    shift_cell = [-1 0 1 -1 0 1 -1 0 1;
+                  1 1 1 0 0 0 -1 -1 -1];
+    % create a matrix (9 * 2^9) for calculating
+    matrix = zeros(9,2^9);
+    for i = 1:2^9
+        binstr = dec2bin(num-1, 9);
+        s = (binstr == '1');
+        matrix(:,i) = s';
+    end
+    p_si = matrix * posterior;
+end
